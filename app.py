@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import streamlit.components.v1 as components
 import xgboost as xgb
+
+
 # using linear
 # Import Linear Regression
 from sklearn.linear_model import LinearRegression
@@ -113,7 +115,11 @@ y_pred = xg_reg.predict(X_test)
 
 
 
+st.title("Explainable XAI")
 
+st.text('The above explanation shows features each contributing to push the model output from the base value (the average model output over the training dataset we passed) to the model output. Features pushing the prediction higher are shown in red, those pushing the prediction lower are in blue.')
+
+st.text('If we take many explanations such as the one shown above, rotate them 90 degrees, and then stack them horizontally, we can see explanations for an entire dataset ')
 
  # explain the model's predictions using SHAP
 # (same syntax works for LightGBM, CatBoost, scikit-learn and spark models)
