@@ -41,7 +41,7 @@ st.write(' The question_text_category :', question_text_category)
 
 
 options = st.checkbox(
-     'Text Category',
+     'Text ',
      ['Mostly Disagree', 'Slightly Disagree', 'Slightly Agree', 'Mostly Agree'],
      ['Yellow', 'Red'])
 
