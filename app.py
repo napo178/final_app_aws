@@ -28,11 +28,12 @@ image = Image.open('int.png')
 st.image(image, caption='Multiple Intelligence')
 
 
-st.header('data_look')
 df=pd.read_csv('clean_intelligence.csv')
 st.dataframe(df)
 y=df['intelligence_category'] # define Y
 X=df[['a_order','a_value','question_id','text_category','id']] # define X
+
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123) # create train and test
 
 fig=px.scatter(df, x='id', y='intelligence_category')
@@ -56,11 +57,14 @@ st.write(' The a_value is :', a_value)
 
 
 
+
+
 question_text_category= st.number_input('question_text_category', 0.0)
 st.write(' The question_text_category :', question_text_category)
 
 
 
+text_class= st.selectbox('text_category_class'['Mostly Disagree':1, 'Slightly Disagree ':2 ,'Slightly Agree':3,'Mostly Agree ':4 ])
 
 text_category= st.number_input('text_category', 0.0)
 st.write('The text_category is', text_category)
@@ -88,7 +92,7 @@ if st.button("Predict"):
      The intelligence category is :  {predict[0]} 
     """)   
     
-   
+
     
     if predict==1:
       st.text('The intelligence category is Musical Intelligence ')
