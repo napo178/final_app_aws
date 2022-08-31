@@ -113,18 +113,15 @@ if st.button("Predict"):
 
 
 
-
-
 def st_shap(plot, height=None):
     shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
     components.html(shap_html, height=height)
-
-
+  
 
 # plotting XAI
 
 
-# using xgboost
+
 
 # Import XGBRegressor
 from xgboost import XGBRegressor
