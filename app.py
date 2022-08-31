@@ -40,7 +40,7 @@ question_text_category= st.number_input('question_text_category', 1.0)
 st.write(' The question_text_category :', question_text_category)
 
 
-options = st.multiselect(
+options = st.checkbox(
      'Text Category',
      ['Mostly Disagree', 'Slightly Disagree', 'Slightly Agree', 'Mostly Agree'],
      ['Yellow', 'Red'])
