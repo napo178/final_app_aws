@@ -11,6 +11,9 @@ import shap
 import numpy as np
 from sklearn.model_selection import GridSearchCV
 import matplotlib.pyplot as plt
+import streamlit as st
+import streamlit.components.v1 as components
+import xgboost
 # using linear
 # Import Linear Regression
 from sklearn.linear_model import LinearRegression
@@ -80,48 +83,48 @@ if st.button("Predict"):
      The intelligence category is :  {predict[0]} 
     """)   
     
-
 y=df['intelligence_category'] # define Y
 X=df[['a_order','a_value','question_id','text_category','id']] # define X
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123) # create train and test   
-    
-# Initialize LinearRegression model
-lin_reg = LinearRegression()
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123) # create train and test
 
-# Fit lin_reg on training data
-lin_reg.fit(X_train, y_train)
 
-# Predict X_test using lin_reg
-y_pred = lin_reg.predict(X_test)
+def st_shap(plot, height=None):
+    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
+    components.html(shap_html, height=height)
 
-# Import mean_squared_error
-from sklearn.metrics import mean_squared_error
+# using xgboost
 
-# Import numpy
-import numpy as np
+# Import XGBRegressor
+from xgboost import XGBRegressor
+import matplotlib.pyplot as plt
 
-# Compute mean_squared_error as mse
-mse = mean_squared_error(y_test, y_pred)
+# Instantiate the XGBRegressor, xg_reg
+xg_reg = XGBRegressor()
 
-# Compute root mean squared error as rmse
-rmse = np.sqrt(mse)
+# Fit xg_reg to training set
+xg_reg.fit(X_train, y_train)
 
-# Display root mean squared error
-print("RMSE: %0.2f" % (rmse))
-print("Coefficient of determination: %.2f" % r2_score(y_test, y_pred))  
+# Predict labels of test set, y_pred
+y_pred = xg_reg.predict(X_test)
 
-  
 
-explainer = shap.explainers.Linear(lin_reg, X_train)
-shap_values = explainer(X_train)
 
-# visualize the model's dependence on the first feature
-shap.plots.scatter(shap_values[:, 0])
 
-    
-    # Get the input features
-    # run predictions
 
+
+
+
+
+ # explain the model's predictions using SHAP
+# (same syntax works for LightGBM, CatBoost, scikit-learn and spark models)
+explainer = shap.TreeExplainer(xg_reg)
+shap_values = explainer.shap_values(X)
+
+# visualize the first prediction's explanation (use matplotlib=True to avoid Javascript)
+st_shap(shap.force_plot(explainer.expected_value, shap_values[0,:], X.iloc[0,:]))
+
+# visualize the training set predictions
+st_shap(shap.force_plot(explainer.expected_value, shap_values, X), 400)
 
 
 
