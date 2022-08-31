@@ -10,6 +10,7 @@ from sklearn.metrics import accuracy_score
 import shap
 import numpy as np
 from sklearn.model_selection import GridSearchCV
+import matplotlib as plt
 # using linear
 # Import Linear Regression
 from sklearn.linear_model import LinearRegression
