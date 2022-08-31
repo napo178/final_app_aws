@@ -13,7 +13,7 @@ from sklearn.model_selection import GridSearchCV
 import matplotlib.pyplot as plt
 import streamlit as st
 import streamlit.components.v1 as components
-import xgboost
+import xgboost as xgb
 # using linear
 # Import Linear Regression
 from sklearn.linear_model import LinearRegression
