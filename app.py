@@ -40,10 +40,15 @@ question_id= st.number_input('question_id', 1.0)
 st.write(' The question_id :', question_id)
 
 
+text_category = st.multiselect(
+     'TText Category',
+     ['Mostly Disagree', 'Slightly Disagree', 'Slightly Agree', 'Mostly Agree'],
+     ['Yellow', 'Red'])
 
-text_category= st.number_input('text_category', 1.0)
 
-st.write(' The text_categorye is :', text_category)
+st.write('You select :', text_category)
+
+
 
 
 id= st.number_input('id', 1.0)
@@ -71,6 +76,7 @@ if st.button("Predict"):
     
     # Get the input features
     # run predictions
+
 
 
 
