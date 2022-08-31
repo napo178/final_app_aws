@@ -61,11 +61,22 @@ if st.button("Predict"):
     pickle_in = open('model.pkl', 'rb')
     model = pickle.load(pickle_in)
     predict=model.predict([[a_order,a_value,question_id,text_category,id]])
-  
-
+    
+    
     st.text(f"""
      The intelligence category is :  {predict[0]} 
-    """)    # Get the input features
+    """)   
+    
+st.text("Musical Intelligence":1,
+'Body/Kinesthetic Intelligence':2,
+'Intrapersonal Intelligence':3,
+'Verbal/Linguistic Intelligence':4,
+'Interpersonal Intelligence ':5,
+'Logical Mathematical Intelligence':6,
+'Visual/Spatial Intelligence ':7,
+'Naturalistic Intelligence ':8 ")
+    
+    # Get the input features
     # run predictions
 
 
