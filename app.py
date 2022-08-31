@@ -10,6 +10,8 @@ st.header('data_look')
 df=pd.read_csv('clean_intelligence.csv')
 
 
+st.dataframe(df)
+
 
 from PIL import Image
 image = Image.open('int.png')
