@@ -58,6 +58,9 @@ st.text("intelligence_category")
 
 
 
+
+
+
  # Rwquest for input fatures, but replod with some default values
 a_order= st.number_input('a_order', 0.0)
 st.write(' The a_value is :', a_order)
@@ -73,6 +76,7 @@ question_text_category= st.number_input('question_text_category', 0.0)
 st.write(' The question_text_category :', question_text_category)
 
 
+st.text( " 'Mostly Disagree':1,'Slightly Disagree ':2, 'Slightly Agree   ':3,'Mostly Agree ':4'  ")
 
 
 text_category= st.number_input('text_category', 0.0)
