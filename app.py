@@ -3,19 +3,20 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
-
+import plotly.express as px
 st.title('App to predict multiple intelligence')
+from PIL import Image
+image = Image.open('int.png')
+st.image(image, caption='Multiple Intelligence')
+
 
 st.header('data_look')
 df=pd.read_csv('clean_intelligence.csv')
 
-
+px.scatter(df, x='id', y='intelligence_category')
 st.dataframe(df)
 
 
-from PIL import Image
-image = Image.open('int.png')
-st.image(image, caption='Multiple Intelligence')
 
 # features for prediction 
 # X = sales_join[['a_value', 'text_categorye', 'id','id','question_id']]
