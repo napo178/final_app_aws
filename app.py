@@ -67,14 +67,7 @@ if st.button("Predict"):
      The intelligence category is :  {predict[0]} 
     """)   
     
-st.text("Musical Intelligence":1,
-'Body/Kinesthetic Intelligence':2,
-'Intrapersonal Intelligence':3,
-'Verbal/Linguistic Intelligence':4,
-'Interpersonal Intelligence ':5,
-'Logical Mathematical Intelligence':6,
-'Visual/Spatial Intelligence ':7,
-'Naturalistic Intelligence ':8 ")
+
     
     # Get the input features
     # run predictions
