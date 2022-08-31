@@ -6,6 +6,8 @@ import numpy as np
 
 st.title('App to predict multiple intelligence')
 
+st.header('data_look')
+df=pd.read_csv('clean_intelligence.csv')
 
 
 
@@ -58,7 +60,7 @@ if st.button("Predict"):
   
 
     st.text(f"""
-     The number of items in the a_value is :  {predict[0]} 
+     The intelligence category is :  {predict[0]} 
     """)    # Get the input features
     # run predictions
 

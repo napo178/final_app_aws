@@ -1,0 +1,25 @@
+,id,a_value,a_category,created_date,a_order,text,question_id,intelligence_category,text_category,date_prep
+0,1,0,Logical Mathematical Intelligence,2/8/2021 21:53,1,Mostly Disagree,1,6.0,1.0,21:53
+4,5,0,Musical Intelligence,2/11/2021 9:08,1,Mostly Disagree,2,1.0,1.0, 9:08
+8,9,0,Musical Intelligence,2/11/2021 9:11,1,Mostly Disagree,3,1.0,1.0, 9:11
+12,13,0,Musical Intelligence,2/11/2021 9:14,1,Mostly Disagree,4,1.0,1.0, 9:14
+16,17,0,Musical Intelligence,2/11/2021 9:15,1,Mostly Disagree,5,1.0,1.0, 9:15
+20,21,0,Musical Intelligence,2/11/2021 9:17,1,Mostly Disagree,6,1.0,1.0, 9:17
+24,32,0,Verbal/Linguistic Intelligence,2/12/2021 20:16,1,Mostly Disagree,12,4.0,1.0, 20:16
+25,34,0,Verbal/Linguistic Intelligence,2/12/2021 20:19,1,Mostly Disagree,13,4.0,1.0, 20:19
+27,36,0,Logical Mathematical Intelligence,3/5/2021 21:25,1,Mostly Disagree,14,6.0,1.0,21:25
+31,40,0,Logical Mathematical Intelligence,3/5/2021 21:35,1,Mostly Disagree,15,6.0,1.0,21:35
+35,44,0,Logical Mathematical Intelligence,3/5/2021 21:37,1,Mostly Disagree,16,6.0,1.0,21:37
+42,51,0,Verbal/Linguistic Intelligence,3/5/2021 22:23,1,Mostly Disagree,17,4.0,1.0,22:23
+48,57,0,Verbal/Linguistic Intelligence,3/5/2021 22:33,1,Mostly Disagree,19,4.0,1.0,22:33
+52,61,0,Verbal/Linguistic Intelligence,3/8/2021 10:48,1,Mostly Disagree,18,4.0,1.0,10:48
+108,126,0,Body/Kinesthetic Intelligence,3/11/2021 14:56,1,Mostly Disagree,36,2.0,1.0, 14:56
+112,130,0,Body/Kinesthetic Intelligence,3/11/2021 14:58,1,Mostly Disagree,37,2.0,1.0, 14:58
+116,134,0,Body/Kinesthetic Intelligence,3/11/2021 15:03,1,Mostly Disagree,38,2.0,1.0, 15:03
+120,138,0,Body/Kinesthetic Intelligence,3/11/2021 15:07,1,Mostly Disagree,39,2.0,1.0, 15:07
+124,142,0,Body/Kinesthetic Intelligence,3/11/2021 15:10,1,Mostly Disagree,40,2.0,1.0, 15:10
+128,146,0,Intrapersonal Intelligence,3/11/2021 15:12,1,Mostly Disagree,41,3.0,1.0, 15:12
+132,150,0,Intrapersonal Intelligence,3/11/2021 15:14,1,Mostly Disagree,42,3.0,1.0, 15:14
+136,154,0,Intrapersonal Intelligence,3/11/2021 15:26,1,Mostly Disagree,43,3.0,1.0, 15:26
+140,158,0,Intrapersonal Intelligence,3/11/2021 15:28,1,Mostly Disagree,44,3.0,1.0, 15:28
+144,162,0,Intrapersonal Intelligence,3/11/2021 15:29,1,Mostly Disagree,45,3.0,1.0, 15:29
