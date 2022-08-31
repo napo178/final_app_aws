@@ -30,31 +30,25 @@ st.subheader('Enter  Features for Predictions')
 a_order= st.number_input('a_order', 1.0)
 st.write(' The a_value is :', a_order)
 
-
-
 a_value= st.number_input('a_value', 1.0)
 st.write(' The a_value is :', a_value)
+
 
 
 question_text_category= st.number_input('question_text_category', 1.0)
 st.write(' The question_text_category :', question_text_category)
 
 
-options = st.checkbox(
-     'Text ',
-     ['Mostly Disagree', 'Slightly Disagree', 'Slightly Agree', 'Mostly Agree'],
-     ['Yellow', 'Red'])
 
 
-st.write('You select :', options)
 
 
 text_category= st.number_input('text_category', 1.0)
 st.write('The text_category is', text_category)
 
 
-text_category= st.number_input('text_category', 1.0)
-st.write('The text_category is', text_category)
+id= st.number_input('text_category', 1.0)
+st.write('The text_category is', id)
 
 
 
@@ -67,7 +61,7 @@ st.write('The text_category is', text_category)
 if st.button("Predict"):
     pickle_in = open('model.pkl', 'rb')
     model = pickle.load(pickle_in)
-    predict=model.predict([[a_order,a_value,question_text_category,text_category,text_category]])
+    predict=model.predict([[a_order,a_value,question_text_category,text_category,id]])
     
     
     st.text(f"""
