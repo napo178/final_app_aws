@@ -31,7 +31,7 @@ st.title("Train data")
 df=pd.read_csv('clean_intelligence.csv')
 st.dataframe(df)
 y=df['intelligence_category'] # define Y
-X=df[['a_order','a_value','question_id','id','id']] # define X
+X=df[['a_order','a_value','question_id','text_category','id']] # define X
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123) # create train and test
@@ -120,15 +120,7 @@ if st.button("Predict"):
 
 
 
-def st_shap(plot, height=None):
-    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
-    components.html(shap_html, height=height)
   
-  
-  
-
-
-
 
 # plotting XAI
 
@@ -153,8 +145,9 @@ y_pred = xg_reg.predict(X_test)
 
 
 
-
-
+def st_shap(plot, height=None):
+    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
+    components.html(shap_html, height=height)
 
 st.title("Explainable XAI")
 
