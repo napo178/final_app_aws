@@ -107,17 +107,15 @@ rmse = np.sqrt(mse)
 
 # Display root mean squared error
 print("RMSE: %0.2f" % (rmse))
-print("Coefficient of determination: %.2f" % r2_score(y_test, y_pred))    
+print("Coefficient of determination: %.2f" % r2_score(y_test, y_pred))  
+
+  
 shap.initjs() 
-explainer = shap.TreeExplainer(lin_reg)
-shap_values = explainer.shap_values(X)
+explainer = shap.explainers.Linear(model, X_train)
+shap_values = explainer(X_train)
 
-# visualize the first prediction's explanation
-shap.force_plot(explainer.expected_value, shap_values[0,:], X.iloc[0,:])
-
-# visualize the training set predictions
-shap.force_plot(explainer.expected_value, shap_values, X)
-
+# visualize the model's dependence on the first feature
+shap.plots.scatter(shap_values[:, 0])
 
     
     # Get the input features
