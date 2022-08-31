@@ -31,25 +31,21 @@ st.title("Train data")
 df=pd.read_csv('clean_intelligence.csv')
 st.dataframe(df)
 y=df['intelligence_category'] # define Y
-X=df[['a_order','a_value','question_id','text_category','id']] # define X
+X=df[['a_order','a_value','question_id','id','id']] # define X
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123) # create train and test
 
 fig=px.scatter(df, x='id', y='intelligence_category')
-st.plotly_chart(fig, use_container_wtext_categoryth=True)
+st.plotly_chart(fig, use_container_width=True)
 
 
-
-# features for prediction 
-# X = sales_join[['a_value', 'text_categorye', 'text_category','text_category','question_text_category']]
-#y = sales_join['items_total']
 
 # Add a heading for input features
 st.subheader('Enter  Features for Predictions')
 
 st.subheader('inputs')
-st.text( "a_order,a_value,question_id,text_category,id")
+st.text( "a_order,a_value,question_id,id,id")
 
 
 st.subheader('response')
@@ -69,23 +65,20 @@ a_value= st.number_input('a_value', 0.0)
 st.write(' The a_value is :', a_value)
 
 
+question_id= st.number_input('question_id', 0.0)
+st.write(' The question_id :', question_id)
 
-
-
-question_text_category= st.number_input('question_text_category', 0.0)
-st.write(' The question_text_category :', question_text_category)
-
-
+st.text('Text_category')
 st.text( " 'Mostly Disagree':1,'Slightly Disagree ':2, 'Slightly Agree   ':3,'Mostly Agree ':4'  ")
 
-
-text_category= st.number_input('text_category', 0.0)
-st.write('The text_category is', text_category)
-
-
+text_category= st.number_input('text category', 0.0)
+st.write(' The text_category :', question_id)
 
 id= st.number_input('id', 0.0)
-st.write('The id is ', id)
+st.write('The id is', id)
+
+
+
 
 
 
@@ -98,7 +91,7 @@ st.write('The id is ', id)
 if st.button("Predict"):
     pickle_in = open('model.pkl', 'rb')
     model = pickle.load(pickle_in)
-    predict=model.predict([[a_order,a_value,question_text_category,text_category,id]])
+    predict=model.predict([[a_order,a_value,question_id,text_category,id]])
     
     
     st.text(f"""
