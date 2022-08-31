@@ -50,19 +50,19 @@ st.subheader('Enter  Features for Predictions')
 
  # Rwquest for input fatures, but replod with some default values
 a_order= st.number_input('a_order', 0.0)
-st.write(' The a_value is :', a_order)
+st.write(' The a_order is :', a_order)
+
 
 a_value= st.number_input('a_value', 0.0)
-st.write(' The a_order is :', a_value)
+st.write(' The a_value is :', a_value)
 
 
 question_text_category= st.number_input('question_text_category', 0.0)
 st.write(' The question_text_category :', question_text_category)
 
-
-
 text_category= st.number_input('text_category', 0.0)
 st.write('The text_category is', text_category)
+
 
 id= st.number_input('id', 0.0)
 st.write('The id is ', id)
