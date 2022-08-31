@@ -5,6 +5,7 @@ import pickle
 import numpy as np
 import plotly.express as px
 st.title('App to predict multiple intelligence')
+
 from PIL import Image
 image = Image.open('int.png')
 st.image(image, caption='Multiple Intelligence')
@@ -41,14 +42,13 @@ st.write(' The question_text_category :', question_text_category)
 
 
 
-
-
 text_category= st.number_input('text_category', 1.0)
 st.write('The text_category is', text_category)
 
 
-id= st.number_input('text_category', 1.0)
-st.write('The text_category is', id)
+
+id= st.number_input('id', 1.0)
+st.write('The id is ', id)
 
 
 
