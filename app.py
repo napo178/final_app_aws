@@ -4,6 +4,18 @@ import pandas as pd
 import pickle
 import numpy as np
 import plotly.express as px
+from sklearn.model_selection import train_test_split
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import accuracy_score
+import shap
+import numpy as np
+from sklearn.model_selection import GridSearchCV
+# using linear
+# Import Linear Regression
+from sklearn.linear_model import LinearRegression
+from sklearn import datasets, linear_model
+from sklearn.metrics import mean_squared_error, r2_score
 st.title('App to predict multiple intelligence')
 
 from PIL import Image
@@ -68,8 +80,44 @@ if st.button("Predict"):
      The intelligence category is :  {predict[0]} 
     """)   
     
-    
 
+y=df['intelligence_category'] # define Y
+X=df[['a_order','a_value','question_id','text_category','id']] # define X
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123) # create train and test   
+    
+# Initialize LinearRegression model
+lin_reg = LinearRegression()
+
+# Fit lin_reg on training data
+lin_reg.fit(X_train, y_train)
+
+# Predict X_test using lin_reg
+y_pred = lin_reg.predict(X_test)
+
+# Import mean_squared_error
+from sklearn.metrics import mean_squared_error
+
+# Import numpy
+import numpy as np
+
+# Compute mean_squared_error as mse
+mse = mean_squared_error(y_test, y_pred)
+
+# Compute root mean squared error as rmse
+rmse = np.sqrt(mse)
+
+# Display root mean squared error
+print("RMSE: %0.2f" % (rmse))
+print("Coefficient of determination: %.2f" % r2_score(y_test, y_pred))    
+shap.initjs() 
+explainer = shap.TreeExplainer(model)
+shap_values = explainer.shap_values(X)
+
+# visualize the first prediction's explanation
+shap.force_plot(explainer.expected_value, shap_values[0,:], X.iloc[0,:])
+
+# visualize the training set predictions
+shap.force_plot(explainer.expected_value, shap_values, X)
 
 
     
