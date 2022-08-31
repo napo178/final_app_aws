@@ -12,9 +12,10 @@ st.image(image, caption='Multiple Intelligence')
 
 st.header('data_look')
 df=pd.read_csv('clean_intelligence.csv')
-
-px.scatter(df, x='id', y='intelligence_category')
 st.dataframe(df)
+
+fig=px.scatter(df, x='id', y='intelligence_category')
+st.plotly_chart(fig, use_container_width=True)
 
 
 
