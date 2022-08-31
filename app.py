@@ -32,7 +32,7 @@ st.header('data_look')
 df=pd.read_csv('clean_intelligence.csv')
 st.dataframe(df)
 
-fig=px.scatter(df, x='text_category', y='intelligence_category')
+fig=px.scatter(df, x='id', y='intelligence_category')
 st.plotly_chart(fig, use_container_wtext_categoryth=True)
 
 
