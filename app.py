@@ -49,11 +49,11 @@ st.plotly_chart(fig, use_container_wtext_categoryth=True)
 st.subheader('Enter  Features for Predictions')
 
 st.subheader('inputs')
-st.text('a_order','a_value','question_id','text_category','id')
+st.text( "a_order,a_value,question_id,text_category,id")
 
 
 st.subheader('response')
-st.text('intelligence_category')
+st.text("intelligence_category")
 
 
 
