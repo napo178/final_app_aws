@@ -48,6 +48,16 @@ st.plotly_chart(fig, use_container_wtext_categoryth=True)
 # Add a heading for input features
 st.subheader('Enter  Features for Predictions')
 
+st.subheader('inputs')
+st.text('a_order','a_value','question_id','text_category','id')
+
+
+st.subheader('response')
+st.text('intelligence_category')
+
+
+
+
  # Rwquest for input fatures, but replod with some default values
 a_order= st.number_input('a_order', 0.0)
 st.write(' The a_value is :', a_order)
