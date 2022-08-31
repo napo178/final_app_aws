@@ -75,13 +75,7 @@ if st.button("Predict"):
     """)   
     
     
-    options = st.multiselect(
-     'TText Category',
-     ['Mostly Disagree', 'Slightly Disagree', 'Slightly Agree', 'Mostly Agree'],
-     ['Yellow', 'Red'])
 
-
-st.write('You select :', options)
 
 
     
