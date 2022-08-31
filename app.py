@@ -92,17 +92,17 @@ if st.button("Predict"):
     
     if predict==1:
       st.text('The intelligence category is Musical Intelligence ')
-    if predict==2:
+    elif predict==2:
       st.text('The intelligence category is Body/Kinesthetic Intelligence ')
-    if predict==3:
+    elif predict==3:
       st.text('The intelligence category is Verbal/Linguistic Intelligence ')
-    if predict==4:
+    elif predict==4:
       st.text('The intelligence category is Interpersonal Intelligence ')
-    if predict==5:
-      st.text('The intelligence category is Logical Mathematical Intelligence')
-    if predict==6:
+    elif predict==5:
+      st.text('The intelligence category is Logical Mathematical Intelligence' )
+    elif predict==6:
       st.text('The intelligence category is Visual/Spatial Intelligenc ')
-    if predict==7:
+    elif predict==7:
       st.text('The intelligence category is Naturalistic Intelligence ')
 
 
