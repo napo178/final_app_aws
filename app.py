@@ -14,13 +14,13 @@ st.header('data_look')
 df=pd.read_csv('clean_intelligence.csv')
 st.dataframe(df)
 
-fig=px.scatter(df, x='id', y='intelligence_category')
-st.plotly_chart(fig, use_container_width=True)
+fig=px.scatter(df, x='text_category', y='intelligence_category')
+st.plotly_chart(fig, use_container_wtext_categoryth=True)
 
 
 
 # features for prediction 
-# X = sales_join[['a_value', 'text_categorye', 'id','id','question_id']]
+# X = sales_join[['a_value', 'text_categorye', 'text_category','text_category','question_text_category']]
 #y = sales_join['items_total']
 
 # Add a heading for input features
@@ -36,23 +36,25 @@ a_value= st.number_input('a_value', 1.0)
 st.write(' The a_value is :', a_value)
 
 
-question_id= st.number_input('question_id', 1.0)
-st.write(' The question_id :', question_id)
+question_text_category= st.number_input('question_text_category', 1.0)
+st.write(' The question_text_category :', question_text_category)
 
 
-text_category = st.multiselect(
-     'TText Category',
+options = st.multiselect(
+     'Text Category',
      ['Mostly Disagree', 'Slightly Disagree', 'Slightly Agree', 'Mostly Agree'],
      ['Yellow', 'Red'])
 
 
-st.write('You select :', text_category)
+st.write('You select :', options)
 
 
+text_category= st.number_input('text_category', 1.0)
+st.write('The text_category is', text_category)
 
 
-id= st.number_input('id', 1.0)
-st.write('The id is', id)
+text_category= st.number_input('text_category', 1.0)
+st.write('The text_category is', text_category)
 
 
 
@@ -65,13 +67,22 @@ st.write('The id is', id)
 if st.button("Predict"):
     pickle_in = open('model.pkl', 'rb')
     model = pickle.load(pickle_in)
-    predict=model.predict([[a_order,a_value,question_id,text_category,id]])
+    predict=model.predict([[a_order,a_value,question_text_category,text_category,text_category]])
     
     
     st.text(f"""
      The intelligence category is :  {predict[0]} 
     """)   
     
+    
+    options = st.multiselect(
+     'TText Category',
+     ['Mostly Disagree', 'Slightly Disagree', 'Slightly Agree', 'Mostly Agree'],
+     ['Yellow', 'Red'])
+
+
+st.write('You select :', options)
+
 
     
     # Get the input features
