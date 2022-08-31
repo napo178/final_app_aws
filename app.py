@@ -6,7 +6,6 @@ import numpy as np
 import plotly.express as px
 from sklearn.model_selection import train_test_split
 import pandas as pd
-import xgboost as xgb
 from sklearn.metrics import accuracy_score
 import shap
 import numpy as np
