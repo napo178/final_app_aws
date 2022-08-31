@@ -109,7 +109,7 @@ rmse = np.sqrt(mse)
 print("RMSE: %0.2f" % (rmse))
 print("Coefficient of determination: %.2f" % r2_score(y_test, y_pred))    
 shap.initjs() 
-explainer = shap.TreeExplainer(model)
+explainer = shap.TreeExplainer(lin_reg)
 shap_values = explainer.shap_values(X)
 
 # visualize the first prediction's explanation
