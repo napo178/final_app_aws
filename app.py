@@ -124,6 +124,11 @@ def st_shap(plot, height=None):
     shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
     components.html(shap_html, height=height)
   
+  
+  
+
+
+
 
 # plotting XAI
 
@@ -142,6 +147,8 @@ xg_reg.fit(X_train, y_train)
 
 # Predict labels of test set, y_pred
 y_pred = xg_reg.predict(X_test)
+
+
 
 
 
