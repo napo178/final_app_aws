@@ -31,6 +31,9 @@ st.image(image, caption='Multiple Intelligence')
 st.header('data_look')
 df=pd.read_csv('clean_intelligence.csv')
 st.dataframe(df)
+y=df['intelligence_category'] # define Y
+X=df[['a_order','a_value','question_id','text_category','id']] # define X
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123) # create train and test
 
 fig=px.scatter(df, x='id', y='intelligence_category')
 st.plotly_chart(fig, use_container_wtext_categoryth=True)
@@ -84,11 +87,29 @@ if st.button("Predict"):
     st.text(f"""
      The intelligence category is :  {predict[0]} 
     """)   
-
     
-y=df['intelligence_category'] # define Y
-X=df[['a_order','a_value','question_id','text_category','id']] # define X
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=123) # create train and test
+   
+    
+    if predict==1:
+      st.text('The intelligence category is Musical Intelligence ')
+    if predict==2:
+      st.text('The intelligence category is Body/Kinesthetic Intelligence ')
+    if predict==3:
+      st.text('The intelligence category is Verbal/Linguistic Intelligence ')
+    if predict==4:
+      st.text('The intelligence category is Interpersonal Intelligence ')
+    if predict==5:
+      st.text('The intelligence category is Logical Mathematical Intelligence')
+    if predict==6:
+      st.text('The intelligence category is Visual/Spatial Intelligenc ')
+    if predict==7:
+      st.text('The intelligence category is Naturalistic Intelligence ')
+
+
+
+
+
+
 
 
 def st_shap(plot, height=None):
