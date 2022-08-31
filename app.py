@@ -111,7 +111,7 @@ print("RMSE: %0.2f" % (rmse))
 print("Coefficient of determination: %.2f" % r2_score(y_test, y_pred))  
 
   
-shap.initjs() 
+
 explainer = shap.explainers.Linear(lin_reg, X_train)
 shap_values = explainer(X_train)
 
