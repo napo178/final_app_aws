@@ -22,12 +22,12 @@ from sklearn.linear_model import LinearRegression
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 st.title('App to predict multiple intelligence')
-
+st.header('Done by Napoleon_Perez')
 from PIL import Image
 image = Image.open('int.png')
 st.image(image, caption='Multiple Intelligence')
 
-
+st.title("Train data")
 df=pd.read_csv('clean_intelligence.csv')
 st.dataframe(df)
 y=df['intelligence_category'] # define Y
